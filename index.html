@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    
+    <style>
+        @font-face {
+            font-family: 'AreaNormal';
+            src: url('./assets/fonts/AreaNormal-Semibold.woff');
+        }
+
+        @font-face {
+            font-family: 'DrukWide';
+            src: url('./assets/fonts/DrukWide-Bold-Web.woff');
+        }
+
+        /* Custom classes */
+
+        .font-area {font-family: 'AreaNormal' , sans-serif;}
+        .font-druk {font-family: 'DrukWide' , sans-serif;}
+    </style>
+
+</head>
+<body class="bg-[#212121]">
+    <!-- Loader -->
+    <div id="loader" class="fixed top-0 left-0 w-full h-full bg-[#000000] flex items-center justify-center z-50">
+        <dotlottie-player src="https://lottie.host/35334386-dba4-4f05-9f21-b0301db60c9b/TjqyofNAy0.lottie"
+            background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
+        </dotlottie-player>
+    </div>
+
+
+    <header>
+        <nav class="text-white pt-3 pl-4 md:m-4 pr-4 flex items-center justify-between ">
+            <!-- Logo -->
+            <img src="./assets/logo.svg" class="w-[125px]"/>
+            <!-- Navigation Links - Hidden on Small Screens -->
+            <ul class="font-area text-[15px] hidden md:flex md:flex-row space-x-16 ">
+                <li><a href="/vision">Our vision</a></li>
+                <li><a href="/team">Our team</a></li>
+                <li><a href="/projects">Our projects</a></li>
+                <li><a href="/contactUs">Contact us</a></li>
+                <li><a href="/lang">FR/EN</a></li>
+            </ul>
+    
+
+            <button id="menutoggle" class="md:hidden ml-auto pr-4">
+                <svg id="menuIcon" class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" 
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="menuPath" stroke-linecap="round" stroke-linejoin="round" 
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-[#212121]">
+            <ul class="font-area text-white font-druk text-[1.5rem] pt-8 pl-5 gap-5 uppercase flex flex-col space-y-4">
+                <li><a href="/">Home</a></li>
+                <li><a href="/vision">Our Vision</a></li>
+                <li><a href="/team">Our team</a></li>
+                <li><a href="/projects">Our Projects</a></li>
+                <li><a href="/contactUs">Contact us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="relative classmain overflow-hidden bg-[#212121] w-full h-screen flex items-center justify-center text-center">
+        <!-- Image container -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Image 1 -->
+            <div class="absolute left-[62%] top-[15%] w-auto md:left-[15%] md:top-[22%] z-1 hover-container">
+                <div class="cross-overlay"></div>
+                <img src="./assets/1.png" class="w-[130px] md:w-[300px] hover-image"/>
+                <h1 class="absolute bottom-[-56px] text-left left-[170px] w-full text-white font-druk text-4xl font-bold px-2 py-1 hidden hover-text md:block">
+                    BIGGER SCIENCE
+                </h1>
+            </div>
+    
+            <!-- Image 2 -->
+            <div class="absolute top-[25%] md:top-[7%] md:right-[15%] w-auto z-2 hover-container">
+                <div class="cross-overlay"></div>
+                <img src="./assets/2.png" class="w-[150px] md:left-16 md:w-[22rem] hover-image"/>
+                <p class="absolute font-druk hidden md:block text-4xl bottom-0 left-40 w-full text-white  font-bold hover-text">MUCEM</p>
+            </div>
+    
+            <!-- Image 3 -->
+            <div class="absolute top-[42%] md:top-[50%] md:right-[15%] w-auto z-1 hover-container">
+                <div class="cross-overlay"></div>
+                <img src="./assets/3.jpg" class="w-[150px] hover-image md:w-[22rem]"/>
+                <p class="absolute hidden font-druk md:block bottom-0 md:text-left md:left-55 w-full text-white text-4xl font-bold px-2 py-1 hover-text">OLIVE TREE</p>
+            </div>
+    
+            <!-- Image 4 -->
+            <div class="absolute top-[34%] right-[4%] md:top-[68%] md:right-[60%] z-1 w-auto hover-container">
+                <div class="cross-overlay"></div>
+                <img src="./assets/4.png" class="w-[150px] md:w-[22rem] hover-image"/>
+                <p class="absolute bottom-0 hidden md:block text-left md:left-55 w-full text-white text-4xl font-druk font-bold hover-text">UNGANISHA</p>
+            </div>
+        </div>
+    
+        <!-- Big Screen Text -->
+<div class="absolute big-text hidden mb-17 select-none md:block text-white z-10 font-bold font-druk md:leading-[1]">
+    <h1 class="md:text-[6em] font-extrabold flex flex-col space-y-2">
+        <span>IMAGINING</span>
+        <span>UNIQUE</span>
+        <span>CONCEPTS</span>
+        <span>AND DIGITAL</span>
+        <span>EXPERIENCES</span>
+    </h1>
+</div>
+
+<!-- Small Screen Text -->
+<div class="absolute bigtext small-text block md:hidden top-50 z-10 text-white font-extrabold font-druk leading-10">
+    <h1 class="text-[34px] font-extrabold flex flex-col space-y-2">
+        <span>IMAGINING</span>
+        <span>UNIQUE</span>
+        <span>CONCEPTS</span>
+        <span>AND DIGITAL</span>
+        <span>EXPERIENCES</span>
+    </h1>
+</div>
+    </main>
+</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menutoggle");
+    const menuPath = document.getElementById("menuPath");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mainContent = document.querySelector(".classmain");
+    const menuLinks = document.querySelectorAll("#mobileMenu ul li");
+    const hoverContainers = document.querySelectorAll(".hover-container");
+    const hoverTextMain = document.querySelectorAll(".big-text h1 span, .small-text h1 span");
+    const loader = document.getElementById("loader");
+
+    setTimeout(()=>{
+        gsap.to(loader , {
+            opacity : 0,
+            duration : 1,
+            onComplete : () => loader.remove()
+        })
+    },1000)
+
+    // 👉 Animate Big Screen & Small Screen Text on Load
+    gsap.from(hoverTextMain, {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
+    });
+
+    // 👉 Hamburger Menu Toggle & GSAP Animations
+    menuToggle.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+
+        if (isHidden) {
+            // Show Menu
+            mobileMenu.classList.remove("hidden");
+            mainContent.classList.add("hidden");
+
+            // Animate menu links
+            gsap.fromTo(
+                menuLinks,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }
+            );
+
+            // Change to "X" icon
+            menuPath.setAttribute("d", "M6 6l12 12M6 18L18 6");
+        } else {
+            // Animate menu links out before hiding
+            gsap.to(menuLinks, {
+                opacity: 0,
+                y: 20,
+                duration: 0.3,
+                stagger: 0.05,
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.add("hidden");
+                    mainContent.classList.remove("hidden");
+                }
+            });
+
+            // Change back to hamburger icon
+            menuPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+        }
+    });
+
+    // 👉 Hover Effects on Containers
+    hoverContainers.forEach((container) => {
+        const hoverImage = container.querySelector(".hover-image");
+        const hoverText = container.querySelector(".hover-text");
+
+        gsap.set(hoverText, { opacity: 0, y: 10 });
+
+        container.addEventListener("mouseenter", () => {
+            gsap.to(container, { zIndex: 20, duration: 0.1 });
+
+            gsap.to(hoverTextMain, {
+                color: "transparent",
+                WebkitTextStroke: "1px #A7A7A7",
+                duration: 0.3,
+            });
+        });
+
+        container.addEventListener("mousemove", (e) => {
+            const rect = container.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            const offsetY = e.clientY - rect.top;
+
+            gsap.to(hoverImage, {
+                x: offsetX - rect.width / 2,
+                y: offsetY - rect.height / 2,
+                scale: 1.1,
+                duration: 0.3,
+            });
+
+            gsap.to(hoverText, {
+                x: offsetX - rect.width / 2,
+                y: offsetY - rect.height / 2,
+                opacity: 1,
+                duration: 0.3,
+            });
+        });
+
+        container.addEventListener("mouseleave", () => {
+            gsap.to(container, { zIndex: 1, duration: 0.3 });
+            gsap.to(hoverImage, { x: 0, y: 0, scale: 1, duration: 0.3 });
+            gsap.to(hoverText, { x: 0, y: 0, opacity: 0, duration: 0.3 });
+
+            gsap.to(hoverTextMain, {
+                color: "white",
+                WebkitTextStroke: "0px transparent",
+                duration: 0.3,
+            });
+
+            hoverContainers.forEach(otherContainer => {
+                otherContainer.classList.remove("cross-box");
+            });
+        });
+    });
+});
+
+</script>
+
+</html>
