@@ -144,13 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
             duration : 1,
             onComplete : () => loader.remove()
         })
-    },1000)
+    },100)
 
     // 👉 Animate Big Screen & Small Screen Text on Load
     gsap.from(hoverTextMain, {
         opacity: 0,
         y: 50,
-        duration: 0.5,
+        duration: 1,
         ease: "power2.out",
         stagger: 0.2,
     });
