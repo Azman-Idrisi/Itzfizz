@@ -19,7 +19,7 @@
             src: url('./assets/fonts/DrukWide-Bold-Web.woff');
         }
 
-        /* Custom classes */
+    
 
         .font-area {font-family: 'AreaNormal' , sans-serif;}
         .font-druk {font-family: 'DrukWide' , sans-serif;}
@@ -27,7 +27,7 @@
 
 </head>
 <body class="bg-[#212121]">
-    <!-- Loader -->
+    
     <div id="loader" class="fixed top-0 left-0 w-full h-full bg-[#000000] flex items-center justify-center z-50">
         <dotlottie-player src="https://lottie.host/35334386-dba4-4f05-9f21-b0301db60c9b/TjqyofNAy0.lottie"
             background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
@@ -37,9 +37,9 @@
 
     <header>
         <nav class="text-white pt-3 pl-4 md:m-4 pr-4 flex items-center justify-between ">
-            <!-- Logo -->
+            
             <img src="./assets/logo.svg" class="w-[125px]"/>
-            <!-- Navigation Links - Hidden on Small Screens -->
+            
             <ul class="font-area text-[15px] hidden md:flex md:flex-row space-x-16 ">
                 <li><a href="/vision">Our vision</a></li>
                 <li><a href="/team">Our team</a></li>
@@ -70,9 +70,9 @@
     </header>
 
     <main class="relative classmain overflow-hidden bg-[#212121] w-full h-screen flex items-center justify-center text-center">
-        <!-- Image container -->
+        
         <div class="absolute inset-0 overflow-hidden">
-            <!-- Image 1 -->
+            
             <div class="absolute left-[62%] top-[15%] w-auto md:left-[15%] md:top-[22%] z-1 hover-container">
                 <div class="cross-overlay"></div>
                 <img src="./assets/1.png" class="w-[130px] md:w-[300px] hover-image"/>
@@ -81,21 +81,21 @@
                 </h1>
             </div>
     
-            <!-- Image 2 -->
+            
             <div class="absolute top-[25%] right-[60%] md:top-[7%] md:right-[15%] w-auto z-2 hover-container">
                 <div class="cross-overlay"></div>
                 <img src="./assets/2.png" class="w-[150px] md:left-16 md:w-[22rem] hover-image"/>
                 <p class="absolute font-druk hidden md:block text-4xl bottom-0 left-40 w-full text-white  font-bold hover-text">MUCEM</p>
             </div>
     
-            <!-- Image 3 -->
+            
             <div class="absolute top-[42%] md:top-[50%] md:right-[15%] w-auto z-1 hover-container">
                 <div class="cross-overlay"></div>
                 <img src="./assets/3.jpg" class="w-[150px] hover-image md:w-[22rem]"/>
                 <p class="absolute hidden font-druk md:block bottom-0 md:text-left md:left-55 w-full text-white text-4xl font-bold px-2 py-1 hover-text">OLIVE TREE</p>
             </div>
     
-            <!-- Image 4 -->
+            
             <div class="absolute top-[34%] right-[4%] md:top-[68%] md:right-[60%] z-1 w-auto hover-container">
                 <div class="cross-overlay"></div>
                 <img src="./assets/4.png" class="w-[150px] md:w-[22rem] hover-image"/>
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     },100)
 
-    // 👉 Animate Big Screen & Small Screen Text on Load
+
     gsap.from(hoverTextMain, {
         opacity: 0,
         y: 50,
@@ -167,26 +167,26 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger : 0.2,
         })
 
-    // 👉 Hamburger Menu Toggle & GSAP Animations
+
     menuToggle.addEventListener("click", () => {
         const isHidden = mobileMenu.classList.contains("hidden");
 
         if (isHidden) {
-            // Show Menu
+            
             mobileMenu.classList.remove("hidden");
             mainContent.classList.add("hidden");
 
-            // Animate menu links
+            
             gsap.fromTo(
                 menuLinks,
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }
             );
 
-            // Change to "X" icon
+
             menuPath.setAttribute("d", "M6 6l12 12M6 18L18 6");
         } else {
-            // Animate menu links out before hiding
+            
             gsap.to(menuLinks, {
                 opacity: 0,
                 y: 20,
@@ -199,12 +199,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Change back to hamburger icon
+            
             menuPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
         }
     });
 
-    // 👉 Hover Effects on Containers
+    
     hoverContainers.forEach((container) => {
         const hoverImage = container.querySelector(".hover-image");
         const hoverText = container.querySelector(".hover-text");
